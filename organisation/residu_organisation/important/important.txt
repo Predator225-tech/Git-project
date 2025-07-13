@@ -1,0 +1,13 @@
+itu@itu-dynabook-R732-H:/opt/lampp/bin$ ./mysql -u ETU004034 -h 172.60.0.10 -p
+voila le mot de passe: vWOFc71U
+
+itu@itu-dynabook-R732-H:/opt/lampp/bin$ ./mysql -u ETU004034 -h 172.60.255.248 -p
+voila le mot de passe: vWOFc71U
+
+itu@itu-dynabook-R732-H:/opt/lampp/bin$ ./mysql -u ETU004034 -h 172.60.255.250 -p
+voila le mot de passe: vWOFc71U
+
+itu@itu-dynabook-R732-H:/opt/lampp/bin$ ./mysql -u ETU004034 -h 172.60.0.13 -p
+voila le mot de passe: vWOFc71U
+
+studio one 7
