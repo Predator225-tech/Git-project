@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.softphone.ui.controller.MainController"
+            style="-fx-font-family: 'Segoe UI', Arial;">
+
+    <!-- Barre supérieure -->
+    <top>
+        <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 15;">
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="SoftPhone Pro" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #00BCD4;"/>
+                <Separator orientation="VERTICAL"/>
+                <Label fx:id="statusLabel" text="Déconnecté" 
+                       style="-fx-font-size: 14; -fx-text-fill: #f44336;"/>
+                <Label fx:id="userInfoLabel" text="" 
+                       style="-fx-font-size: 12; -fx-text-fill: #9E9E9E;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="callStatusLabel" text="Prêt" 
+                       style="-fx-font-size: 12; -fx-text-fill: #4CAF50; -fx-padding: 5;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Contenu principal -->
+    <center>
+        <HBox spacing="20" style="-fx-padding: 20; -fx-background-color: #2a2a2a;">
+            
+            <!-- Panneau gauche: Connexion et numérotation -->
+            <VBox spacing="20" style="-fx-padding: 15; -fx-background-color: #333333; -fx-border-radius: 5;"
+                  prefWidth="400">
+                
+                <!-- Section Connexion -->
+                <TitledPane text="Connexion Asterisk" collapsible="false"
+                           style="-fx-text-fill: #00BCD4; -fx-font-weight: bold;">
+                    <VBox spacing="10" style="-fx-padding: 10;">
+                        <HBox spacing="10">
+                            <Label text="Extension:" prefWidth="100"/>
+                            <TextField fx:id="extensionField" promptText="100" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Utilisateur:" prefWidth="100"/>
+                            <TextField fx:id="usernameField" promptText="admin" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Mot de passe:" prefWidth="100"/>
+                            <PasswordField fx:id="passwordField" promptText="****" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Button fx:id="connectButton" text="Connexion" prefWidth="100"
+                                   style="-fx-font-size: 12; -fx-padding: 8;"/>
+                            <Button fx:id="disconnectButton" text="Déconnexion" prefWidth="100"
+                                   style="-fx-font-size: 12; -fx-padding: 8;"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <!-- Section Numérotation -->
+                <TitledPane text="Numérotation" collapsible="false"
+                           style="-fx-text-fill: #00BCD4; -fx-font-weight: bold;">
+                    <VBox spacing="10" style="-fx-padding: 10;">
+                        <TextField fx:id="phoneNumberField" promptText="Numéro à appeler"
+                                  style="-fx-font-size: 18; -fx-padding: 10; -fx-text-alignment: center;"/>
+                        
+                        <Label text="Contexte:" style="-fx-font-size: 12;"/>
+                        <ComboBox fx:id="contextCombo" prefWidth="380"/>
+                        
+                        <VBox fx:id="dialpadContainer" spacing="5">
+                            <!-- Clavier numérique généré dynamiquement -->
+                        </VBox>
+                        
+                        <HBox spacing="10">
+                            <Button fx:id="callButton" text="📞 APPELER" prefWidth="180"
+                                   style="-fx-font-size: 14; -fx-padding: 12; -fx-text-fill: white; -fx-background-color: #4CAF50;"/>
+                            <Button fx:id="hangupButton" text="☎ RACCROCHER" prefWidth="180"
+                                   style="-fx-font-size: 14; -fx-padding: 12; -fx-text-fill: white; -fx-background-color: #f44336;"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+            </VBox>
+
+            <!-- Panneau droit: Infos et historique -->
+            <VBox spacing="20" HBox.hgrow="ALWAYS">
+                
+                <!-- Infos d'appel en cours -->
+                <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #333333; -fx-border-radius: 5;">
+                    <Label text="Appel en cours" 
+                           style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #00BCD4;"/>
+                    <HBox spacing="20" alignment="CENTER">
+                        <VBox alignment="CENTER" prefWidth="150">
+                            <Label fx:id="callDurationLabel" text="Durée: 0s"
+                                  style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+                        </VBox>
+                        <Separator orientation="VERTICAL"/>
+                        <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <Label text="État" style="-fx-font-size: 12; -fx-text-fill: #9E9E9E;"/>
+                            <Label text="Prêt" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Historique des appels -->
+                <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #333333; -fx-border-radius: 5;"
+                      VBox.vgrow="ALWAYS">
+                    <Label text="Historique des appels" 
+                           style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #00BCD4;"/>
+                    <TableView fx:id="callHistoryTable" VBox.vgrow="ALWAYS"
+                              style="-fx-control-inner-background: #2a2a2a; -fx-text-fill: white;">
+                    </TableView>
+                </VBox>
+            </VBox>
+        </HBox>
+    </center>
+
+    <!-- Barre inférieure -->
+    <bottom>
+        <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 10;">
+            <Label text="© 2026 SoftPhone Pro - Système d'appels VoIP | Prêt"
+                   style="-fx-text-fill: #9E9E9E; -fx-font-size: 11;"/>
+        </VBox>
+    </bottom>
+</BorderPane>

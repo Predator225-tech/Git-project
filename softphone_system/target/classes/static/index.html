@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftPhone Pro - Système d'appels VoIP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📞 SoftPhone Pro</h1>
+                <div class="status-info">
+                    <span class="status-badge" id="statusBadge">Déconnecté</span>
+                    <span class="user-info" id="userInfo"></span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Panneau gauche -->
+            <aside class="left-panel">
+                <!-- Section Connexion -->
+                <section class="panel-section">
+                    <h2 class="section-title">🔌 Connexion Asterisk</h2>
+                    <div class="form-group">
+                        <label>Extension SIP</label>
+                        <input type="text" id="extension" placeholder="100" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Utilisateur</label>
+                        <input type="text" id="username" placeholder="admin" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Mot de passe</label>
+                        <input type="password" id="password" placeholder="****" class="form-input">
+                    </div>
+                    <div class="button-group">
+                        <button id="connectBtn" class="btn btn-primary">Connexion</button>
+                        <button id="disconnectBtn" class="btn btn-secondary" disabled>Déconnexion</button>
+                    </div>
+                </section>
+
+                <!-- Section Numérotation -->
+                <section class="panel-section">
+                    <h2 class="section-title">📱 Numérotation</h2>
+                    <input type="text" id="phoneNumber" placeholder="Numéro à appeler" 
+                           class="phone-input" disabled>
+                    
+                    <div class="form-group">
+                        <label>Contexte</label>
+                        <select id="context" class="form-input" disabled>
+                            <option value="from-internal">from-internal</option>
+                            <option value="from-external">from-external</option>
+                            <option value="from-sip">from-sip</option>
+                        </select>
+                    </div>
+
+                    <!-- Clavier numérique -->
+                    <div class="dialpad">
+                        <div class="dialpad-row">
+                            <button class="dialpad-btn" data-digit="1">1</button>
+                            <button class="dialpad-btn" data-digit="2">2</button>
+                            <button class="dialpad-btn" data-digit="3">3</button>
+                        </div>
+                        <div class="dialpad-row">
+                            <button class="dialpad-btn" data-digit="4">4</button>
+                            <button class="dialpad-btn" data-digit="5">5</button>
+                            <button class="dialpad-btn" data-digit="6">6</button>
+                        </div>
+                        <div class="dialpad-row">
+                            <button class="dialpad-btn" data-digit="7">7</button>
+                            <button class="dialpad-btn" data-digit="8">8</button>
+                            <button class="dialpad-btn" data-digit="9">9</button>
+                        </div>
+                        <div class="dialpad-row">
+                            <button class="dialpad-btn" data-digit="*">*</button>
+                            <button class="dialpad-btn" data-digit="0">0</button>
+                            <button class="dialpad-btn" data-digit="#">#</button>
+                        </div>
+                        <div class="dialpad-row full">
+                            <button id="backspaceBtn" class="dialpad-btn">← Retour</button>
+                        </div>
+                    </div>
+
+                    <!-- Boutons d'appel -->
+                    <div class="call-buttons">
+                        <button id="callBtn" class="btn btn-success btn-large" disabled>
+                            <span class="btn-icon">📞</span> APPELER
+                        </button>
+                        <button id="hangupBtn" class="btn btn-danger btn-large" disabled>
+                            <span class="btn-icon">☎</span> RACCROCHER
+                        </button>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Panneau droit -->
+            <section class="right-panel">
+                <!-- Infos d'appel en cours -->
+                <div class="call-info-panel">
+                    <h2 class="section-title">📞 Appel en cours</h2>
+                    <div class="call-info-content">
+                        <div class="call-duration">
+                            <span class="duration-value" id="callDuration">0:00</span>
+                            <span class="duration-label">Durée</span>
+                        </div>
+                        <div class="call-status">
+                            <span class="status-value" id="callStatus">Prêt</span>
+                            <span class="status-label">État</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historique des appels -->
+                <div class="history-panel">
+                    <h2 class="section-title">📋 Historique des appels</h2>
+                    <div class="history-list" id="historyList">
+                        <p class="empty-message">Aucun appel enregistré</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pied de page -->
+        <footer class="footer">
+            <p>© 2026 SoftPhone Pro - Système d'appels VoIP | v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

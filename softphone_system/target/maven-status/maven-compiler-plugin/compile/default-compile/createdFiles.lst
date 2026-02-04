@@ -1,0 +1,16 @@
+com/softphone/ui/SoftPhoneApp.class
+com/softphone/server/CallServer.class
+com/softphone/client/SoftPhoneClient.class
+com/softphone/server/CallSession.class
+com/softphone/client/AudioHandler.class
+com/softphone/client/gui/SoftPhoneGUI.class
+com/softphone/asterisk/AsteriskManager.class
+com/softphone/asterisk/cli/AsteriskCliClient.class
+com/softphone/ui/controller/MainController$CallLog.class
+com/softphone/asterisk/AsteriskSoftPhoneClient.class
+com/softphone/client/cli/SoftPhoneCliClient.class
+com/softphone/server/UserInfo.class
+com/softphone/web/SoftPhoneWebApplication.class
+com/softphone/ui/controller/MainController.class
+com/softphone/web/controller/SoftPhoneController.class
+com/softphone/server/CallServer$ClientHandler.class

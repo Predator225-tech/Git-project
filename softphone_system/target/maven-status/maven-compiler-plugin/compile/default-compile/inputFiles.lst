@@ -1,0 +1,12 @@
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/asterisk/cli/AsteriskCliClient.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/client/SoftPhoneClient.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/web/SoftPhoneWebApplication.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/client/AudioHandler.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/client/gui/SoftPhoneGUI.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/server/CallServer.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/client/cli/SoftPhoneCliClient.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/asterisk/AsteriskSoftPhoneClient.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/web/controller/SoftPhoneController.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/ui/SoftPhoneApp.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/asterisk/AsteriskManager.java
+/workspaces/Git-project/softphone_system/src/main/java/com/softphone/ui/controller/MainController.java
